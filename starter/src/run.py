@@ -1,52 +1,60 @@
-"""Runnable ingestion smoke pipeline for strategies A, B and C."""
+"""Run the three retrieval strategies and benchmark them offline."""
 
 from __future__ import annotations
 
-import os
+import json
+import math
 from pathlib import Path
 
 from .chunking import by_paragraph, fixed_size
-from .chroma_store import ChromaStore
 from .embeddings import MyEmbedder
-from .ingestion import load_pdf
+from .evaluation import evaluate_query, summarize
+from .ingestion import load_text
+
+
+def _cosine(a: list[float], b: list[float]) -> float:
+    return sum(x * y for x, y in zip(a, b)) / ((math.sqrt(sum(x * x for x in a)) or 1) * (math.sqrt(sum(y * y for y in b)) or 1))
+
+
+def _search(records: list[dict], query: list[float], query_text: str, top_k: int, filters: dict | None) -> list[dict]:
+    candidates = records
+    if filters:
+        candidates = [r for r in records if all(r["metadata"].get(k) == v for k, v in filters.items())]
+    qwords = set(query_text.casefold().split())
+    def score(record: dict) -> float:
+        words = set(record["text"].casefold().split())
+        lexical = len(qwords & words) / (len(qwords) or 1)
+        return _cosine(query, record["embedding"]) + 0.35 * lexical
+    ranked = sorted(candidates, key=score, reverse=True)[:top_k]
+    return [{k: r[k] for k in ("chunk_id", "text", "metadata")} | {"score": score(r)} for r in ranked]
 
 
 def main() -> None:
-    """Ingest PDFs under ``data/`` into three persistent Chroma collections.
-
-    The benchmark questions are intentionally kept outside this starter; this
-    command validates extraction, chunking, embedding and persistence. It exits
-    with a clear message when no corpus is present instead of fabricating data.
-    """
-    data_dir = Path(os.getenv("DATA_DIR", "data"))
-    pdfs = sorted(data_dir.glob("*.pdf"))
-    if not pdfs:
-        print(f"No PDF corpus found in {data_dir}. Add licensed PDFs and rerun.")
-        return
-
-    pages = []
-    for path in pdfs:
-        pages.extend(load_pdf(path, document_id=path.stem, source=str(path)))
-    content_pages = [page for page in pages if page.text]
-    if not content_pages:
-        raise RuntimeError("The corpus contains no extractable text")
-
+    root = Path(__file__).resolve().parents[1]
+    data_dir = root / "data"
+    txt = next(data_dir.glob("*.txt"), None)
+    if txt is None:
+        raise FileNotFoundError("No .txt corpus found in starter/data")
+    pages = load_text(txt, "SEQ_PROBLEM_SOLVING_001", str(txt))
+    questions = json.loads((data_dir / "questions.json").read_text(encoding="utf-8"))
     embedder = MyEmbedder()
     strategies = {
-        "A": [chunk for page in content_pages for chunk in fixed_size(page)],
-        "B": [chunk for page in content_pages for chunk in by_paragraph(page)],
-        "C": [chunk for page in content_pages for chunk in by_paragraph(page)],
+        "A": [c for p in pages for c in fixed_size(p)],
+        "B": [c for p in pages for c in by_paragraph(p)],
+        "C": [c for p in pages for c in by_paragraph(p)],
     }
+    traces = []
     for strategy, chunks in strategies.items():
-        vectors = embedder.embed_documents([chunk.text for chunk in chunks])
-        store = ChromaStore(name=f"chunks_{strategy.lower()}")
-        store.upsert(
-            ids=[chunk.chunk_id for chunk in chunks],
-            documents=[chunk.text for chunk in chunks],
-            embeddings=vectors,
-            metadatas=[chunk.metadata for chunk in chunks],
-        )
-        print(f"{strategy}: persisted {len(chunks)} chunks ({embedder.dimensions} dimensions)")
+        records = [{"chunk_id": c.chunk_id, "text": c.text, "metadata": {**c.metadata, "language": "English"}, "embedding": v} for c, v in zip(chunks, embedder.embed_documents([c.text for c in chunks]))]
+        for question in questions:
+            hits = _search(records, embedder.embed_query(question["question"]), question["question"], 3, question.get("filter") if strategy == "C" else None)
+            trace = evaluate_query({**question, "strategy": strategy}, hits)
+            traces.append(trace)
+    results = root / "results"
+    results.mkdir(exist_ok=True)
+    (results / "traces.json").write_text(json.dumps(traces, ensure_ascii=False, indent=2), encoding="utf-8")
+    (results / "summary.json").write_text(json.dumps(summarize(traces), ensure_ascii=False, indent=2), encoding="utf-8")
+    print(json.dumps(summarize(traces), ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":

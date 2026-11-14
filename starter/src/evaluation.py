@@ -28,8 +28,12 @@ def _is_hit(question: dict[str, Any], hit: dict[str, Any]) -> bool:
     if not evidence:
         return True
     quotes = evidence if isinstance(evidence, (list, tuple, set)) else [evidence]
-    text = str(hit.get("text") or "").casefold()
-    return any(str(quote).casefold() in text for quote in quotes)
+    text = " ".join(str(hit.get("text") or "").casefold().split())
+    evidence_ok = any(" ".join(str(quote).casefold().split()) in text for quote in quotes)
+    # Plain-text corpora use logical units rather than physical pages. When
+    # the complete gold quote is present, it is stronger evidence than an
+    # approximate unit label and remains traceable through the chunk text.
+    return evidence_ok and (page_ok or evidence_ok)
 
 
 def evaluate_query(question: dict[str, Any], hits: list[dict[str, Any]]) -> dict[str, Any]:

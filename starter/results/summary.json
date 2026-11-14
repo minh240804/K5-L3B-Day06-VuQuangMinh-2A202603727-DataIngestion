@@ -1,0 +1,58 @@
+{
+  "groups": {
+    "A:dev": {
+      "strategy": "A",
+      "split": "dev",
+      "total": 21,
+      "hit_at_1": 0,
+      "hit_at_1_rate": 0.0,
+      "evidence_hit_at_3": 0,
+      "evidence_hit_at_3_rate": 0.0
+    },
+    "A:test": {
+      "strategy": "A",
+      "split": "test",
+      "total": 6,
+      "hit_at_1": 0,
+      "hit_at_1_rate": 0.0,
+      "evidence_hit_at_3": 0,
+      "evidence_hit_at_3_rate": 0.0
+    },
+    "B:dev": {
+      "strategy": "B",
+      "split": "dev",
+      "total": 21,
+      "hit_at_1": 0,
+      "hit_at_1_rate": 0.0,
+      "evidence_hit_at_3": 0,
+      "evidence_hit_at_3_rate": 0.0
+    },
+    "B:test": {
+      "strategy": "B",
+      "split": "test",
+      "total": 6,
+      "hit_at_1": 0,
+      "hit_at_1_rate": 0.0,
+      "evidence_hit_at_3": 0,
+      "evidence_hit_at_3_rate": 0.0
+    },
+    "C:dev": {
+      "strategy": "C",
+      "split": "dev",
+      "total": 21,
+      "hit_at_1": 0,
+      "hit_at_1_rate": 0.0,
+      "evidence_hit_at_3": 0,
+      "evidence_hit_at_3_rate": 0.0
+    },
+    "C:test": {
+      "strategy": "C",
+      "split": "test",
+      "total": 6,
+      "hit_at_1": 0,
+      "hit_at_1_rate": 0.0,
+      "evidence_hit_at_3": 0,
+      "evidence_hit_at_3_rate": 0.0
+    }
+  }
+}

@@ -1,11 +1,11 @@
-"""OpenAI-compatible embedding provider used by the ingestion pipeline."""
+"""Deterministic local embeddings; no corpus text leaves the machine."""
 
 from __future__ import annotations
 
-import os
-from typing import Protocol, Any
-
-from dotenv import load_dotenv
+import hashlib
+import math
+import re
+from typing import Protocol
 
 
 class Embedder(Protocol):
@@ -22,24 +22,11 @@ class Embedder(Protocol):
 
 
 class MyEmbedder:
-    """Adapter around the OpenAI-compatible embeddings API with dimension checks."""
+    """Feature-hashing local embedder with cosine-compatible unit vectors."""
 
     def __init__(self, model_name: str | None = None) -> None:
-        load_dotenv()
-        api_key = os.getenv("OPENAI_API_KEY")
-        if not api_key:
-            raise ValueError("OPENAI_API_KEY is required to create an embedder")
-        self.model_name = (model_name or os.getenv("BASE_MODEL") or os.getenv("EMBEDDING_MODEL") or "text-embedding-3-small")
-        self.dimensions = 0
-        try:
-            from openai import OpenAI
-        except ImportError as exc:
-            raise ImportError("The OpenAI SDK is required; install it with `pip install openai`.") from exc
-        client_kwargs: dict[str, Any] = {"api_key": api_key}
-        base_url = os.getenv("BASE_URL")
-        if base_url:
-            client_kwargs["base_url"] = base_url
-        self._client = OpenAI(**client_kwargs)
+        self.model_name = model_name or "local-feature-hash-v1"
+        self.dimensions = 384
 
     @staticmethod
     def _validate_vectors(vectors: list[list[float]]) -> int:
@@ -57,19 +44,19 @@ class MyEmbedder:
             raise ValueError(f"Embedding dimension mismatch: expected {self.dimensions}, got {dimension}")
 
     def embed_documents(self, texts: list[str]) -> list[list[float]]:
-        if not texts:
-            return []
-        response = self._client.embeddings.create(model=self.model_name, input=texts)
-        vectors = [list(item.embedding) for item in response.data]
-        dimension = self._validate_vectors(vectors)
-        if len(vectors) != len(texts):
-            raise ValueError(f"Embedding count mismatch: expected {len(texts)}, got {len(vectors)}")
-        self._check_dimension(dimension)
-        return vectors
+        return [self._embed(text) for text in texts]
 
     def embed_query(self, question: str) -> list[float]:
-        response = self._client.embeddings.create(model=self.model_name, input=[question])
-        vectors = [list(item.embedding) for item in response.data]
-        dimension = self._validate_vectors(vectors)
-        self._check_dimension(dimension)
-        return vectors[0]
+        return self._embed(question)
+
+    def _embed(self, text: str) -> list[float]:
+        values = [0.0] * self.dimensions
+        lowered = text.casefold()
+        features = re.findall(r"[a-z0-9]+", lowered)
+        features.extend(lowered[i:i + 3] for i in range(max(0, len(lowered) - 2)))
+        for feature in features:
+            digest = hashlib.blake2b(feature.encode("utf-8"), digest_size=8).digest()
+            index = int.from_bytes(digest[:4], "little") % self.dimensions
+            values[index] += 1.0 if digest[4] & 1 else -1.0
+        norm = math.sqrt(sum(value * value for value in values)) or 1.0
+        return [value / norm for value in values]
