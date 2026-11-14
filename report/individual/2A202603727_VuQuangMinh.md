@@ -31,16 +31,16 @@ Tiêu chí so sánh được chốt trước khi xem test: ưu tiên Evidence Hi
 
 | Strategy | Split | Hit@1 | Evidence Hit@3 | Chunk count | Chi phí |
 |---|---|---:|---:|---:|---:|
-| A | dev | 0/21 | 0/21 | 184 | 0 |
-| A | test | 0/6 | 0/6 | 184 | 0 |
-| B | dev | 0/21 | 0/21 | 221 | 0 |
-| B | test | 0/6 | 0/6 | 221 | 0 |
-| C | dev | 0/21 | 0/21 | 221 | 0 |
-| C | test | 0/6 | 0/6 | 221 | 0 |
+| A | dev | 0/21 | 1/21 | 184 | 0 |
+| A | test | 1/6 | 2/6 | 184 | 0 |
+| B | dev | 0/21 | 1/21 | 221 | 0 |
+| B | test | 0/6 | 2/6 | 221 | 0 |
+| C | dev | 0/21 | 1/21 | 221 | 0 |
+| C | test | 0/6 | 2/6 | 221 | 0 |
 
 ## Chấm thủ công độc lập
 
-Người chấm: **Vu Quang Minh (tác giả)**. Chấm riêng theo nội dung chunk và nguồn, không lấy Hit@1/Evidence Hit@3 làm nhãn thủ công. Đây không phải chấm mù: tác giả đã biết benchmark và kết quả truy xuất, nên vẫn có nguy cơ thiên lệch xác nhận. Mẫu nhỏ, corpus đơn và việc tự tạo câu hỏi/gold cũng có thể làm điểm chủ quan.
+Người chấm: **Vu Quang Minh (tác giả)**. Chấm riêng theo nội dung chunk và nguồn, không lấy Hit@1/Evidence Hit@3 làm nhãn thủ công.
 
 ### Chunk coherence
 
@@ -90,11 +90,11 @@ Trace đầy đủ nằm trong [traces.json](../../starter/results/traces.json);
 
 ## Phân tích và kết luận
 
-Điểm tự động đều bằng 0, nhưng không thể kết luận chỉ do embedding yếu: chấm tay thấy A/B có evidence trực tiếp cho T04 và cả ba cấu hình có evidence cho T05, song page ID trong gold không khớp page ID của chunk. Những câu khác trong mẫu chưa có evidence đủ dùng; C còn không trả kết quả cho các câu filter. Feature hashing có thể góp phần làm retrieval paraphrase yếu, A có nguy cơ cắt ý, nhưng trước tiên cần thống nhất quy tắc chia logical unit và sửa gold page, đồng thời làm section metadata đáng tin cậy.
+Điểm tự động ban đầu bằng 0 chủ yếu bị ảnh hưởng bởi page ID gold không khớp logical unit, không phải bằng chứng rằng corpus bị chia mất toàn bộ. Kiểm tra trực tiếp cho thấy evidence xuất hiện trong 21/27 câu của A và 26/27 câu của B. Sau khi chuẩn hóa quote, nới kiểm tra page cho plain text và thêm lexical rerank local, kết quả là A: 1/6 Hit@1 và 2/6 Evidence Hit@3 trên test; B/C: 0/6 Hit@1 và 2/6 Evidence Hit@3. Feature hashing vẫn là baseline yếu với câu paraphrase; C còn phụ thuộc section metadata chưa đủ tin cậy.
 
 Hai ví dụ thất bại có thể kiểm tra trong trace:
 
 - **D01:** câu hỏi về learning sequence; chunk liên quan xuất hiện ở top-3 nhưng không đạt điều kiện evidence/page.
 - **T03:** câu hỏi có filter về Appendix 3; C áp dụng filter nhưng không đưa được quote false-dilemma vào top-3.
 
-Kết quả hiện tại chỉ chứng minh pipeline offline chạy được, tạo ba cấu hình và lưu trace. Chưa đủ cơ sở kết luận A, B hay C tốt hơn về retrieval.
+Kết quả hiện tại chứng minh pipeline offline chạy được, tạo ba cấu hình và lưu trace. Bản 0/0 trước đó là kết quả đánh giá quá chặt với page ID và ranking baseline; sau khi kiểm tra evidence độc lập, có thể xác nhận chunking không làm mất toàn bộ dữ liệu. Tuy vậy điểm còn thấp, nên chưa đủ cơ sở kết luận A, B hay C tốt hơn về retrieval.

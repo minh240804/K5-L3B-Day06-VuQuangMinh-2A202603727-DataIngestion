@@ -5,4 +5,5 @@ python-dotenv>=1,<2
 
 openai>=1,<2
 
-chromadb>=0.5,<1
+# Optional: ChromaDB currently requires a native hnswlib build on Python 3.14.
+# The offline runner uses an in-process cosine index and does not need ChromaDB.

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import math
+import re
 from pathlib import Path
 
 from .chunking import by_paragraph, fixed_size
@@ -20,11 +21,12 @@ def _search(records: list[dict], query: list[float], query_text: str, top_k: int
     candidates = records
     if filters:
         candidates = [r for r in records if all(r["metadata"].get(k) == v for k, v in filters.items())]
-    qwords = set(query_text.casefold().split())
+    stopwords = {"the", "a", "an", "of", "in", "on", "to", "what", "is", "are", "does", "how", "according", "document", "book", "and", "for", "with", "when", "why", "this", "that"}
+    qwords = set(re.findall(r"[a-z0-9]+", query_text.casefold())) - stopwords
     def score(record: dict) -> float:
-        words = set(record["text"].casefold().split())
+        words = set(re.findall(r"[a-z0-9]+", record["text"].casefold()))
         lexical = len(qwords & words) / (len(qwords) or 1)
-        return _cosine(query, record["embedding"]) + 0.35 * lexical
+        return _cosine(query, record["embedding"]) + 2.0 * lexical
     ranked = sorted(candidates, key=score, reverse=True)[:top_k]
     return [{k: r[k] for k in ("chunk_id", "text", "metadata")} | {"score": score(r)} for r in ranked]
 

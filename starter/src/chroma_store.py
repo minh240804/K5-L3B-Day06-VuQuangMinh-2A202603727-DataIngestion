@@ -4,13 +4,17 @@ from __future__ import annotations
 
 from typing import Any, Sequence
 
-import chromadb
-
-
 class ChromaStore:
     """Store and search chunks using a persistent Chroma collection."""
 
     def __init__(self, name: str = "chunks") -> None:
+        try:
+            import chromadb
+        except ImportError as exc:
+            raise ImportError(
+                "ChromaDB is optional on Python 3.14; install Microsoft C++ Build Tools "
+                "or use the offline runner in src.run."
+            ) from exc
         self.client = chromadb.PersistentClient(path="chroma_data")
         self.collection = self.client.get_or_create_collection(
             name=name,

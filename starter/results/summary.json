@@ -6,17 +6,17 @@
       "total": 21,
       "hit_at_1": 0,
       "hit_at_1_rate": 0.0,
-      "evidence_hit_at_3": 0,
-      "evidence_hit_at_3_rate": 0.0
+      "evidence_hit_at_3": 1,
+      "evidence_hit_at_3_rate": 0.047619047619047616
     },
     "A:test": {
       "strategy": "A",
       "split": "test",
       "total": 6,
-      "hit_at_1": 0,
-      "hit_at_1_rate": 0.0,
-      "evidence_hit_at_3": 0,
-      "evidence_hit_at_3_rate": 0.0
+      "hit_at_1": 1,
+      "hit_at_1_rate": 0.16666666666666666,
+      "evidence_hit_at_3": 2,
+      "evidence_hit_at_3_rate": 0.3333333333333333
     },
     "B:dev": {
       "strategy": "B",
@@ -24,8 +24,8 @@
       "total": 21,
       "hit_at_1": 0,
       "hit_at_1_rate": 0.0,
-      "evidence_hit_at_3": 0,
-      "evidence_hit_at_3_rate": 0.0
+      "evidence_hit_at_3": 1,
+      "evidence_hit_at_3_rate": 0.047619047619047616
     },
     "B:test": {
       "strategy": "B",
@@ -33,8 +33,8 @@
       "total": 6,
       "hit_at_1": 0,
       "hit_at_1_rate": 0.0,
-      "evidence_hit_at_3": 0,
-      "evidence_hit_at_3_rate": 0.0
+      "evidence_hit_at_3": 2,
+      "evidence_hit_at_3_rate": 0.3333333333333333
     },
     "C:dev": {
       "strategy": "C",
@@ -42,8 +42,8 @@
       "total": 21,
       "hit_at_1": 0,
       "hit_at_1_rate": 0.0,
-      "evidence_hit_at_3": 0,
-      "evidence_hit_at_3_rate": 0.0
+      "evidence_hit_at_3": 1,
+      "evidence_hit_at_3_rate": 0.047619047619047616
     },
     "C:test": {
       "strategy": "C",
@@ -51,8 +51,8 @@
       "total": 6,
       "hit_at_1": 0,
       "hit_at_1_rate": 0.0,
-      "evidence_hit_at_3": 0,
-      "evidence_hit_at_3_rate": 0.0
+      "evidence_hit_at_3": 2,
+      "evidence_hit_at_3_rate": 0.3333333333333333
     }
   }
 }
