@@ -1,0 +1,642 @@
+[
+  {
+    "id": "T01",
+    "split": "dev",
+    "question": "In the Preface, what does the author say were his two chief questions after first examining the problem of how to teach children to study?",
+    "expected_answer": "How adults should study, and how children should be taught to study.",
+    "gold_source_id": "HOW_TO_STUDY_001",
+    "gold_page": "PREFACE",
+    "evidence_quote": "Ever since that time the two questions, How adults should study, and How children should be taught to study, have together been my chief hobby.",
+    "filter": {
+      "section": "PREFACE",
+      "language": "English"
+    },
+    "question_type": "direct",
+    "topic": "Preface",
+    "gold_char_range": [
+      768,
+      910
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "PREFACE",
+        "gold_char_range": [
+          768,
+          910
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'PREFACE', 'language': 'English'}"
+  },
+  {
+    "id": "T02",
+    "split": "dev",
+    "question": "In Chapter I, what example does the author give of his own high-school method of studying algebra?",
+    "expected_answer": "He memorized the 'statements' for long sets of problems obtained from friends who could solve them, and in that way was able to 'pass off' the subject.",
+    "gold_source_id": "HOW_TO_STUDY_002",
+    "gold_page": "CHAPTER I",
+    "evidence_quote": "We had several friends, however, who could solve them, and, by calling upon them for help, we obtained the \"statement\" for each one. All these statements I memorized, and in that way I was able to \"pass off\" the subject.",
+    "filter": {
+      "section": "CHAPTER I",
+      "language": "English"
+    },
+    "question_type": "direct",
+    "topic": "Present Methods of Study",
+    "gold_char_range": [
+      3717,
+      3936
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER I",
+        "gold_char_range": [
+          3717,
+          3936
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER I', 'language': 'English'}"
+  },
+  {
+    "id": "T03",
+    "split": "dev",
+    "question": "In Chapter II, what does the author say study does not normally take place without?",
+    "expected_answer": "Study does not normally take place except under the stimulus or spur of particular conditions, and of conditions that are unsatisfactory.",
+    "gold_source_id": "HOW_TO_STUDY_003",
+    "gold_page": "CHAPTER II",
+    "evidence_quote": "But the essential fact is that study does not normally take place except under the stimulus or spur of particular conditions, and of conditions, too, that are unsatisfactory.",
+    "filter": {
+      "section": "CHAPTER II",
+      "language": "English"
+    },
+    "question_type": "direct",
+    "topic": "Nature of Study",
+    "gold_char_range": [
+      18092,
+      18265
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER II",
+        "gold_char_range": [
+          18092,
+          18265
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER II', 'language': 'English'}"
+  },
+  {
+    "id": "T04",
+    "split": "dev",
+    "question": "After discussing the factors in study, what does the author say they constitute?",
+    "expected_answer": "They constitute the principal factors in study.",
+    "gold_source_id": "HOW_TO_STUDY_004",
+    "gold_page": "CHAPTER II",
+    "evidence_quote": "The above constitute the principal factors in study.",
+    "filter": {
+      "section": "CHAPTER II",
+      "language": "English"
+    },
+    "question_type": "direct",
+    "topic": "Nature of Study",
+    "gold_char_range": [
+      36494,
+      36545
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER II",
+        "gold_char_range": [
+          36494,
+          36545
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER II', 'language': 'English'}"
+  },
+  {
+    "id": "T05",
+    "split": "dev",
+    "question": "In Chapter II, according to the author, what is the working definition of study and what limitations does he place on the term?",
+    "expected_answer": "Study is the work necessary in the assimilation of ideas, much of which consists in thinking but not synonymous with thinking because it includes mechanical drill. Only such thinking and drill as are integral parts of mental work necessary for valuable purposes count as study; random thinking, drills on dead facts, day-dreaming, and reading for recreation are not study. Study is purposive, systematic work.",
+    "gold_source_id": "HOW_TO_STUDY_005",
+    "gold_page": "CHAPTER II",
+    "evidence_quote": "Study, in general, is the work that is necessary in the assimilation of ideas. Much of this work consists in thinking. But study is not synonymous with thinking, for it also includes other activities, as mechanical drill, for example. Such drill is often necessary in the mastery of thought. Not just any thinking and any drill, however, may be counted as study. At least only such thinking and such drill are here included within the term as are integral parts of the mental work that is necessary in the accomplishment of valuable purposes. Thinking that is done at random, and drills that have no object beyond acquaintance with dead facts, as those upon dates, lists of words, and location of places, for instance, are unworthy of being considered a part of study. Day-dreaming, giving way to reverie and to casual fancy, too, is not to be regarded as study. Not because it is not well to indulge in such activity at times, but because it is not serious enough to be called work. Study is systematic work, and not play. Reading for recreation, further, is not study.",
+    "filter": {
+      "section": "CHAPTER II",
+      "language": "English"
+    },
+    "question_type": "paraphrase",
+    "topic": "Nature of Study",
+    "gold_char_range": [
+      39624,
+      40693
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER II",
+        "gold_char_range": [
+          39624,
+          40693
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER II', 'language': 'English'}"
+  },
+  {
+    "id": "T06",
+    "split": "dev",
+    "question": "In Chapter III, what two characteristics of well-selected specific aims does the author say are worthy of special note?",
+    "expected_answer": "Their source (they spring from within the person concerned and represent individual desire) and their narrowness and consequent definiteness (they call for investigation of a relatively small and definite topic).",
+    "gold_source_id": "HOW_TO_STUDY_006",
+    "gold_page": "CHAPTER III",
+    "evidence_quote": "Well-selected ends of this sort have two characteristics that are worthy of special note. The first pertains to their _source_. Their possible variety is without limit. Some may be or an intellectual nature, as numbers 6, 8, and 9 among those listed above; some may aim at utility for the individual, as numbers 1 and 7; and some may involve service to others, as numbers 2 and 3. But however much they vary, they find their source _within_ the person concerned. They spring out of his own experience and appeal to him for that reason. One very important measure of their worth is the extent to which they represent an individual desire. The second characteristic pertains to their _narrowness_ and consequent _definiteness_. They call in each case for an investigation of a relatively small and definite topic.",
+    "filter": {
+      "section": "CHAPTER III",
+      "language": "English"
+    },
+    "question_type": "paraphrase",
+    "topic": "Specific Purposes",
+    "gold_char_range": [
+      46797,
+      47607
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER III",
+        "gold_char_range": [
+          46797,
+          47607
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER III', 'language': 'English'}"
+  },
+  {
+    "id": "T07",
+    "split": "dev",
+    "question": "In Chapter IV, what does the author say is the minimum limit for supplementing thought, and what standard does he use to judge whether that limit has been met?",
+    "expected_answer": "The minimum is enough supplementing to render the thought really nourishing and quickening to the learner; the standard is that the pupil must see the thing vividly, enter into its spirit, and feel/experience it, not merely understand and reproduce it.",
+    "gold_source_id": "HOW_TO_STUDY_007",
+    "gold_page": "CHAPTER IV",
+    "evidence_quote": "Briefly stated, it is this: There should be enough supplementing to render the thought really nourishing, _quickening_, to the learner. In the case of literature that will involve some supplementing; and in the case of ordinary text-books it will require a good deal more. Is this standard met when the child understands and can reproduce in substance the definition of desert? Far from it! That definition is as dry and barren as the desert itself; it tends to deaden rather than quicken. The pupil must go far beyond the mere cold understanding and reproduction of a topic. He must see the thing talked about, as though in its presence; he must not only see this vividly, but he must enter into its spirit, or _feel_ it; he must experience or live it.",
+    "filter": {
+      "section": "CHAPTER IV",
+      "language": "English"
+    },
+    "question_type": "paraphrase",
+    "topic": "Supplementing Thought",
+    "gold_char_range": [
+      111849,
+      112601
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER III",
+        "gold_char_range": [
+          111849,
+          112601
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER III', 'language': 'English'}"
+  },
+  {
+    "id": "T08",
+    "split": "dev",
+    "question": "In Chapter IV, what does the author say about the extent to which Bible study requires supplementing?",
+    "expected_answer": "The Bible contains only the raw materials for thought and must be supplemented without limit if one is to comprehend it and be properly nourished by it.",
+    "gold_source_id": "HOW_TO_STUDY_008",
+    "gold_page": "CHAPTER IV",
+    "evidence_quote": "Evidently both to the minister and to the layman the Bible contains only the raw materials for thought. It must be supplemented without limit, if one is to comprehend it and to be nourished by it properly.",
+    "filter": {
+      "section": "CHAPTER IV",
+      "language": "English"
+    },
+    "question_type": "direct",
+    "topic": "Supplementing Thought",
+    "gold_char_range": [
+      95880,
+      96084
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER IV",
+        "gold_char_range": [
+          95880,
+          96084
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER IV', 'language': 'English'}"
+  },
+  {
+    "id": "T09",
+    "split": "dev",
+    "question": "In Chapter IV, why does the author say that authors fail to express their thought more completely, and why should readers not complain about this?",
+    "expected_answer": "The omissions are not due to evil natures or superabundance of thought alone; readers would be dissatisfied if all the work were done for them, and older people, like children, love activity and resent too much assistance. Since the omissions accord with our own desires, we should undertake the necessary supplementing without complaint.",
+    "gold_source_id": "HOW_TO_STUDY_009",
+    "gold_page": "CHAPTER IV",
+    "evidence_quote": "Yet these omissions are not to be ascribed to the evil natures of authors, nor to the superabundance of their thought, alone. Readers would be dissatisfied if all this work were done for them. Any one has observed that small children are disappointed if they are not allowed to perform necessary little tasks that lie within their power. Also, they enjoy those toys most that are not too complete, and that, therefore, leave some work for their own imaginations. This quality of childhood is characteristic of youth and of adults. An author would not be forgiven if he stopped in the midst of his discourse to explain a reference. Eminent writers, like Longfellow, for example, are even blamed for attaching the morals to their productions; and terseness is one of the qualities of literature that is most praised. In other words, older people, like children, love activity. Although they at times hate to work, they do not want authors to presuppose that they are lazy or helpless; and they resent too much assistance. Since, therefore, the many omissions in the presentation of thought are in accordance with our own desires, we would do well to undertake the necessary supplementing without complaint.",
+    "filter": {
+      "section": "CHAPTER IV",
+      "language": "English"
+    },
+    "question_type": "paraphrase",
+    "topic": "Supplementing Thought",
+    "gold_char_range": [
+      113662,
+      114865
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER IV",
+        "gold_char_range": [
+          113662,
+          114865
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER IV', 'language': 'English'}"
+  },
+  {
+    "id": "T10",
+    "split": "dev",
+    "question": "In Chapter V, what does the author say is the effect on method of study when facts are treated as approximately equal in worth?",
+    "expected_answer": "The learner pictures the field of knowledge as a comparatively level plain composed of a vast aggregation of independent bits, and gets possession of it by advancing slowly, mastering one bit at a time, rather than by taking strategic positions.",
+    "gold_source_id": "HOW_TO_STUDY_010",
+    "gold_page": "CHAPTER V",
+    "evidence_quote": "So long as facts are treated as approximately equal in worth, the learner is bound to picture the field of knowledge as a comparatively level plain composed of a vast aggregation of independent bits. In spelling, writing, and beginning reading it is so many hundreds or thousands of words; in beginning arithmetic it is the various combinations in the four fundamental operations; in geography it is a long list of statements; in history it is an endless lot of facts as they happen to come on the page; in literature it is sentence after sentence. One can get possession of this field, not by taking the strategic positions,--for under the assumption of equality there are none,--but rather by advancing over it slowly, mastering one bit at a time.",
+    "filter": {
+      "section": "CHAPTER V",
+      "language": "English"
+    },
+    "question_type": "paraphrase",
+    "topic": "Organization of Ideas",
+    "gold_char_range": [
+      128364,
+      129112
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER V",
+        "gold_char_range": [
+          128364,
+          129112
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER V', 'language': 'English'}"
+  },
+  {
+    "id": "T11",
+    "split": "dev",
+    "question": "In Chapter I, what did Dr. Earhart's test with 842 children reveal about their knowledge of how to study a geography lesson?",
+    "expected_answer": "Only 14 really found or stated they had found the subject of the lesson; 710 out of 842 gave indefinite and unsatisfactory answers, showing no clear knowledge of the principal things to be done in mastering an ordinary text-book lesson.",
+    "gold_source_id": "HOW_TO_STUDY_011",
+    "gold_page": "CHAPTER I",
+    "evidence_quote": "Out of 842 children who took this test, only fourteen really found, or stated that they had found, the subject of the lesson. Two others said that they _would_ find it. Eighty-eight really found, or stated that they had found, the most important parts of the lesson; twenty-one others, that they _would_ find them. Four verified the statements in the text, and three others said that they _would_ do that. Nine children did nothing; 158 \"did not understand the requirements\"; 100 gave irrelevant answers; 119 merely \"thought,\" or \"tried to understand the lesson,\" or \"studied the lesson\"; and 324 simply wrote the facts of the lesson. In other words, 710 out of the 842 sixth- and seventh- grade pupils who took the test gave indefinite and unsatisfactory answers. This number showed that they had no clear knowledge of the principal things to be done in mastering an ordinary text-book lesson in geography.",
+    "filter": {
+      "section": "CHAPTER I",
+      "language": "English"
+    },
+    "question_type": "direct",
+    "topic": "Present Methods of Study",
+    "gold_char_range": [
+      5861,
+      6767
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER I",
+        "gold_char_range": [
+          5861,
+          6767
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER I', 'language': 'English'}"
+  },
+  {
+    "id": "T12",
+    "split": "dev",
+    "question": "In Chapter II, how does the author describe the difference between the ordinary scholar and the scientific investigator like Dr. Reed in terms of producing knowledge?",
+    "expected_answer": "Dr. Reed went far beyond previous investigators, conceiving new tests for old hypotheses and positing new hypotheses, enlarging the confines of knowledge; the ordinary scholar must be content to be a receiver rather than a contributor of knowledge, occupying himself mainly with the ideas of other persons.",
+    "gold_source_id": "HOW_TO_STUDY_012",
+    "gold_page": "CHAPTER II",
+    "evidence_quote": "Dr. Reed in this case went far beyond the discoveries of previous investigators. Not only did he conceive new tests for old hypotheses, but he posited new hypotheses, as well as collected the data that would prove or disprove them. Thus, while he no doubt made much use of previous facts, he went far beyond that and succeeded in enlarging the confines of knowledge. That is a task that can be accomplished only by the most mature and gifted of men. The ordinary scholar must also be a collector of facts. But he must be content to be a receiver rather than a contributor of knowledge; that is, he must occupy himself mainly with the ideas of other persons",
+    "filter": {
+      "section": "CHAPTER II",
+      "language": "English"
+    },
+    "question_type": "conditional",
+    "topic": "Nature of Study",
+    "gold_char_range": [
+      24769,
+      25424
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER II",
+        "gold_char_range": [
+          24769,
+          25424
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER II', 'language': 'English'}"
+  },
+  {
+    "id": "T13",
+    "split": "dev",
+    "question": "In Chapter III, according to the author, under what condition would it be unnatural to expect children to discover specific aims for their study?",
+    "expected_answer": "If children's lives are comparatively barren intellectually and morally, it might be unnatural to make such a demand upon them.",
+    "gold_source_id": "HOW_TO_STUDY_013",
+    "gold_page": "CHAPTER III",
+    "evidence_quote": "If, on the other hand, their lives are comparatively barren, it might be unnatural to make such a demand upon them.",
+    "filter": {
+      "section": "CHAPTER III",
+      "language": "English"
+    },
+    "question_type": "conditional",
+    "topic": "Specific Purposes",
+    "gold_char_range": [
+      75017,
+      75131
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER III",
+        "gold_char_range": [
+          75017,
+          75131
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER III', 'language': 'English'}"
+  },
+  {
+    "id": "T14",
+    "split": "dev",
+    "question": "Within Chapter III, what does the author say about the relationship between specific purposes and general purposes in study?",
+    "expected_answer": "They are not necessarily opposed; general purposes are the final goals, but they are too remote to act as immediate guides, so narrower specific purposes are related to the larger ones as means to ends.",
+    "gold_source_id": "HOW_TO_STUDY_014",
+    "gold_page": "CHAPTER III",
+    "evidence_quote": "Nevertheless, these two kinds of aims are not necessarily opposed to each other. If a person can increase his mental power, or his love of knowledge, or his culture, at the same time that he is accomplishing specific purposes, why should he not do so? The gain is so much the greater. Not only are the two kinds not mutually opposed, but they are really necessary to each other. General purposes when rightly conceived are of the greatest importance as the _final_ goals to be reached by study. But they are too remote of attainment to act as immediate guides. Others more detailed must perform that office and mark off the minor steps to be taken in the accomplishment of the larger purposes. Thus the narrower purposes are related to the larger ones as means to ends.",
+    "filter": {
+      "section": "CHAPTER III",
+      "language": "English"
+    },
+    "question_type": "metadata_filter",
+    "topic": "Specific Purposes",
+    "gold_char_range": [
+      49905,
+      50673
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER III",
+        "gold_char_range": [
+          49905,
+          50673
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER III', 'language': 'English'}"
+  },
+  {
+    "id": "T15",
+    "split": "dev",
+    "question": "Within Chapter IV, what does the author say about the character of children's literature and its implication for children's ability to supplement thought?",
+    "expected_answer": "Children's literature, like that for adults, presupposes much supplementing, which is strong reason for presupposing that ability on the children's part; moral lessons in fairy tales and fables must be reached by children's own thought.",
+    "gold_source_id": "HOW_TO_STUDY_015",
+    "gold_page": "CHAPTER IV",
+    "evidence_quote": "Finally, the fact that children's literature, like that for adults, presupposes much supplementing, is strong reason for presupposing that ability on their part. Any moral lessons that belong to fairy tales must be reached by the children's own thought; the same usually applies to fables also.",
+    "filter": {
+      "section": "CHAPTER IV",
+      "language": "English"
+    },
+    "question_type": "metadata_filter",
+    "topic": "Supplementing Thought",
+    "gold_char_range": [
+      117470,
+      117763
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER IV",
+        "gold_char_range": [
+          117470,
+          117763
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER IV', 'language': 'English'}"
+  },
+  {
+    "id": "T16",
+    "split": "test",
+    "question": "In Chapter I, what did the fifteen-year-old boy do when called upon in the first recitation of his new history book?",
+    "expected_answer": "He started off finely but soon stopped in the middle of a sentence and sat down; he had been reproducing the text verbatim, and the last word he uttered was the last word on the first page.",
+    "gold_source_id": "HOW_TO_STUDY_016",
+    "gold_page": "CHAPTER I",
+    "evidence_quote": "He happened to be the first one called upon, in the first recitation, and he started off finely. But soon he stopped, in the middle of a sentence, and sat down. When I asked him what was the matter, he simply replied that that was as far as he had got. Then, on glancing at the book, I saw that he had been reproducing the text _verbatim_, and the last word that he had uttered was the last word on the first page.",
+    "filter": {
+      "section": "CHAPTER I",
+      "language": "English"
+    },
+    "question_type": "direct",
+    "topic": "Present Methods of Study",
+    "gold_char_range": [
+      4155,
+      4568
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER I",
+        "gold_char_range": [
+          4155,
+          4568
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER I', 'language': 'English'}"
+  },
+  {
+    "id": "T17",
+    "split": "test",
+    "question": "In Chapter II, what does the author say about the attitude of the young student toward authorities, and what are the two possible extremes he rejects?",
+    "expected_answer": "The author rejects both the extreme of setting oneself up as judge (condemning statements outright or accepting only in part) and the extreme of adopting a docile, passive attitude accepting whatever is presented; the correct attitude is neither condemning nor accepting, but understanding and remembering what authors say (with the question of critical judgment left open).",
+    "gold_source_id": "HOW_TO_STUDY_017",
+    "gold_page": "CHAPTER II",
+    "evidence_quote": "Are they still so prone to error that he should be critical toward them? At any rate, should he set himself up as their judge; at times condemning some of their statements outright, or accepting them only in part,--and thus maintain independent views? Or would that be the height of presumption on his part? While it is true that all authors are liable to error, are they much less liable to it in their chosen fields than he, and can he more safely trust them than himself? And should he, therefore, being a learner, adopt a docile, passive attitude, and accept whatever statements are presented? Or, finally, is neither of these attitudes correct? Instead of either condemning or accepting authors, is it his duty merely to understand and remember what they say?",
+    "filter": {
+      "section": "CHAPTER II",
+      "language": "English"
+    },
+    "question_type": "paraphrase",
+    "topic": "Nature of Study",
+    "gold_char_range": [
+      29152,
+      29915
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER II",
+        "gold_char_range": [
+          29152,
+          29915
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER II', 'language': 'English'}"
+  },
+  {
+    "id": "T18",
+    "split": "test",
+    "question": "In Chapter III, under what condition does the author say children can contribute to establishing the normal relation between school and its environing world, and what example does he give?",
+    "expected_answer": "Children can contribute by discovering some specific purposes themselves; the example is improving children's reading by enabling them to see that the better their reading, the more pleasure they can give to others (e.g., reading to a lonely old woman whose eyes have failed).",
+    "gold_source_id": "HOW_TO_STUDY_018",
+    "gold_page": "CHAPTER III",
+    "evidence_quote": "The fixing of specific aims for study can aid materially in establishing the normal relation, and children can certainly contribute to this end by discovering some of these purposes themselves.",
+    "filter": {
+      "section": "CHAPTER III",
+      "language": "English"
+    },
+    "question_type": "conditional",
+    "topic": "Specific Purposes",
+    "gold_char_range": [
+      80186,
+      80378
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER III",
+        "gold_char_range": [
+          80186,
+          80378
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER III', 'language': 'English'}"
+  },
+  {
+    "id": "T19",
+    "split": "test",
+    "question": "Within Chapter IV, what does Ruskin say about how authors reveal their deeper thought, and what metaphor does he use for the reader's work?",
+    "expected_answer": "Ruskin says authors cannot say it all and will not, but in a hidden way and in parables, in order that they may be sure you want it; they do not give it by way of help but of reward, making sure you deserve it before allowing you to reach it. He uses the metaphor of gold in the earth: the author's words are the rock to be crushed and smelted, and the reader's pickaxes are care, wit, and learning, with a smelting furnace of the thoughtful soul.",
+    "gold_source_id": "HOW_TO_STUDY_019",
+    "gold_page": "CHAPTER IV",
+    "evidence_quote": "And be sure, also, if the author is worth anything, that you will not get at his meaning all at once,--nay, that at his whole meaning you will not for a long time arrive in any wise. Not that he does not say what he means, and in strong words, too; but he cannot say it all",
+    "filter": {
+      "section": "CHAPTER IV",
+      "language": "English"
+    },
+    "question_type": "metadata_filter",
+    "topic": "Supplementing Thought",
+    "gold_char_range": [
+      104140,
+      104412
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER IV",
+        "gold_char_range": [
+          104140,
+          104412
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER IV', 'language': 'English'}"
+  },
+  {
+    "id": "T20",
+    "split": "test",
+    "question": "In Chapter IV, what exception does the author note regarding the application of supplementing ideas to beginning reading, writing, spelling, and number work, and why are these subjects dangerous?",
+    "expected_answer": "Much of what has been said about supplementing ideas finds only slight application to beginning reading, writing, spelling, and number work, because these subjects aim largely at mastery of symbols and call for memory and skill rather than reflection. They are dangerous to proper habits of study because they are so prominent during the first few years that children may form their idea of study from them alone and carry it over to other branches.",
+    "gold_source_id": "HOW_TO_STUDY_020",
+    "gold_page": "CHAPTER IV",
+    "evidence_quote": "Much of what has been said about supplementing ideas finds only slight application to beginning reading, writing, spelling, and number work. The reason is that these subjects, aiming so largely at mastery of symbols, call for memory and skill rather than reflection. For this very reason these subjects are in many ways dangerous to proper habits of study, and the teacher needs to be on her guard against their bad influence. They are so prominent during the first few years of school that children may form their idea of study from them alone, which they may retain and carry over to other branches.",
+    "filter": {
+      "section": "CHAPTER IV",
+      "language": "English"
+    },
+    "question_type": "exception",
+    "topic": "Organization of Ideas",
+    "gold_char_range": [
+      124171,
+      124771
+    ],
+    "all_valid_gold_spans": [
+      {
+        "gold_page": "CHAPTER V",
+        "gold_char_range": [
+          124171,
+          124771
+        ]
+      }
+    ],
+    "source_title": "How to Study and Teaching How to Study",
+    "source_path": "books.txt",
+    "normalization": "Main content between the Gutenberg START/END markers; collapse whitespace runs to one ASCII space and trim ends. Character ranges are 1-based inclusive.",
+    "filter_context": "Apply metadata filter before retrieval: {'section': 'CHAPTER V', 'language': 'English'}"
+  }
+]

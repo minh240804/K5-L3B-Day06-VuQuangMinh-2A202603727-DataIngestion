@@ -1,58 +1,38 @@
 {
-  "groups": {
-    "A:dev": {
-      "strategy": "A",
-      "split": "dev",
-      "total": 21,
-      "hit_at_1": 0,
-      "hit_at_1_rate": 0.0,
-      "evidence_hit_at_3": 1,
-      "evidence_hit_at_3_rate": 0.047619047619047616
+  "A": {
+    "dev": {
+      "n": 15,
+      "hit_at_1": 2,
+      "evidence_hit_at_3": 5
     },
-    "A:test": {
-      "strategy": "A",
-      "split": "test",
-      "total": 6,
+    "test": {
+      "n": 5,
+      "hit_at_1": 3,
+      "evidence_hit_at_3": 3
+    }
+  },
+  "B": {
+    "dev": {
+      "n": 15,
+      "hit_at_1": 0,
+      "evidence_hit_at_3": 0
+    },
+    "test": {
+      "n": 5,
+      "hit_at_1": 0,
+      "evidence_hit_at_3": 0
+    }
+  },
+  "C": {
+    "dev": {
+      "n": 15,
       "hit_at_1": 1,
-      "hit_at_1_rate": 0.16666666666666666,
-      "evidence_hit_at_3": 2,
-      "evidence_hit_at_3_rate": 0.3333333333333333
+      "evidence_hit_at_3": 2
     },
-    "B:dev": {
-      "strategy": "B",
-      "split": "dev",
-      "total": 21,
+    "test": {
+      "n": 5,
       "hit_at_1": 0,
-      "hit_at_1_rate": 0.0,
-      "evidence_hit_at_3": 1,
-      "evidence_hit_at_3_rate": 0.047619047619047616
-    },
-    "B:test": {
-      "strategy": "B",
-      "split": "test",
-      "total": 6,
-      "hit_at_1": 0,
-      "hit_at_1_rate": 0.0,
-      "evidence_hit_at_3": 2,
-      "evidence_hit_at_3_rate": 0.3333333333333333
-    },
-    "C:dev": {
-      "strategy": "C",
-      "split": "dev",
-      "total": 21,
-      "hit_at_1": 0,
-      "hit_at_1_rate": 0.0,
-      "evidence_hit_at_3": 1,
-      "evidence_hit_at_3_rate": 0.047619047619047616
-    },
-    "C:test": {
-      "strategy": "C",
-      "split": "test",
-      "total": 6,
-      "hit_at_1": 0,
-      "hit_at_1_rate": 0.0,
-      "evidence_hit_at_3": 2,
-      "evidence_hit_at_3_rate": 0.3333333333333333
+      "evidence_hit_at_3": 0
     }
   }
 }

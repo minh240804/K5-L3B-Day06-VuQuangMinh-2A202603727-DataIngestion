@@ -1,0 +1,48 @@
+{
+  "corpus_id": "gutenberg-6109-prepared",
+  "prepared_at": "2026-11-15",
+  "source_file": "data/books.txt",
+  "source_url": "https://www.gutenberg.org/ebooks/6109",
+  "title": "How to Study and Teaching How to Study",
+  "author": "Frank M. McMurry",
+  "provider_upload_status": "PENDING_PROVIDER_TERMS_CHECK",
+  "license": "Project Gutenberg License; verify current terms and local law before third-party API upload",
+  "source_accessed_at": null,
+  "unit_rule": "30 chapter-aware units, split only at paragraph boundaries; each unit retains source line range",
+  "unit_count": 30,
+  "chapter_count": 12,
+  "unit_characters": {
+    "min": 2255,
+    "max": 23361
+  },
+  "unit_words": {
+    "min": 387,
+    "max": 4031
+  },
+  "filter_field": "chapter",
+  "filter_values": [
+    "CHAPTER I",
+    "CHAPTER II",
+    "CHAPTER III",
+    "CHAPTER IV",
+    "CHAPTER IX",
+    "CHAPTER V",
+    "CHAPTER VI",
+    "CHAPTER VII",
+    "CHAPTER VIII",
+    "CHAPTER X",
+    "CHAPTER XI",
+    "PREFACE"
+  ],
+  "embedding_requirements": {
+    "same_model_for_all_strategies": true,
+    "document_query_compatibility_required": true,
+    "max_chunk_tokens_must_be_checked_against_provider_limit": true,
+    "api_key_must_stay_in_env": true,
+    "provider_retention_and_training_terms_must_be_recorded": true
+  },
+  "files": [
+    "corpus.jsonl",
+    "../books.txt"
+  ]
+}

@@ -1,10 +1,5 @@
-"""Deterministic local embeddings; no corpus text leaves the machine."""
-
-from __future__ import annotations
-
-import hashlib
-import math
-import re
+"""OpenAI-compatible embedding adapter."""
+import os
 from typing import Protocol
 
 
@@ -22,41 +17,25 @@ class Embedder(Protocol):
 
 
 class MyEmbedder:
-    """Feature-hashing local embedder with cosine-compatible unit vectors."""
+    """Use OPENAI_API_KEY, BASE_URL and BASE_MODEL from the environment."""
 
-    def __init__(self, model_name: str | None = None) -> None:
-        self.model_name = model_name or "local-feature-hash-v1"
-        self.dimensions = 384
-
-    @staticmethod
-    def _validate_vectors(vectors: list[list[float]]) -> int:
-        if not vectors:
-            raise ValueError("Embedding response contained no vectors")
-        dimension = len(vectors[0])
-        if dimension == 0 or any(len(vector) != dimension for vector in vectors):
-            raise ValueError("Embedding response contains inconsistent dimensions")
-        return dimension
-
-    def _check_dimension(self, dimension: int) -> None:
-        if self.dimensions == 0:
-            self.dimensions = dimension
-        elif dimension != self.dimensions:
-            raise ValueError(f"Embedding dimension mismatch: expected {self.dimensions}, got {dimension}")
+    def __init__(self, model_name: str) -> None:
+        from openai import OpenAI
+        self.model_name = model_name or os.getenv("BASE_MODEL", "")
+        api_key = os.getenv("OPENAI_API_KEY"); base_url = os.getenv("BASE_URL")
+        if not api_key or not self.model_name: raise ValueError("OPENAI_API_KEY and BASE_MODEL are required")
+        kwargs = {"api_key": api_key}
+        if base_url: kwargs["base_url"] = base_url
+        self.client = OpenAI(**kwargs); self.dimensions = 0
 
     def embed_documents(self, texts: list[str]) -> list[list[float]]:
-        return [self._embed(text) for text in texts]
+        vectors: list[list[float]] = []
+        for start in range(0, len(texts), 64):
+            response = self.client.embeddings.create(model=self.model_name, input=texts[start:start + 64])
+            vectors.extend(item.embedding for item in sorted(response.data, key=lambda item: item.index))
+        if vectors: self.dimensions = len(vectors[0])
+        return vectors
 
     def embed_query(self, question: str) -> list[float]:
-        return self._embed(question)
-
-    def _embed(self, text: str) -> list[float]:
-        values = [0.0] * self.dimensions
-        lowered = text.casefold()
-        features = re.findall(r"[a-z0-9]+", lowered)
-        features.extend(lowered[i:i + 3] for i in range(max(0, len(lowered) - 2)))
-        for feature in features:
-            digest = hashlib.blake2b(feature.encode("utf-8"), digest_size=8).digest()
-            index = int.from_bytes(digest[:4], "little") % self.dimensions
-            values[index] += 1.0 if digest[4] & 1 else -1.0
-        norm = math.sqrt(sum(value * value for value in values)) or 1.0
-        return [value / norm for value in values]
+        response = self.client.embeddings.create(model=self.model_name, input=[question])
+        vector = response.data[0].embedding; self.dimensions = len(vector); return vector
